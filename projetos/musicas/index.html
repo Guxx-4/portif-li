@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Músicas</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding-top: 2rem;
+        }
+        .music-card {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: transform 0.2s;
+        }
+        .music-card:hover {
+            transform: scale(1.02);
+            background-color: #2a2a2a;
+        }
+        .music-info {
+            display: flex;
+            align-items: center;
+        }
+        .music-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #1db954, #19a34a);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+        .add-music-form {
+            background-color: #1e1e1e;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        .btn-spotify {
+            background-color: #1db954;
+            color: white;
+            border: none;
+        }
+        .btn-spotify:hover {
+            background-color: #1ed760;
+            color: white;
+        }
+        .delete-btn {
+            color: #ff4d4d;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container max-w-md">
+        <a href="../../index.html" class="text-white text-decoration-none mb-4 d-inline-block">
+            <i class="fa-solid fa-arrow-left"></i> Voltar ao Portfólio
+        </a>
+        <h2 class="mb-4"><i class="fa-solid fa-headphones"></i> Minhas Músicas Preferidas</h2>
+
+        <div class="add-music-form shadow">
+            <h4>Adicionar Nova Música</h4>
+            <div class="row g-2 mt-2">
+                <div class="col-md-5">
+                    <input type="text" id="musicName" class="form-control bg-dark text-white border-secondary" placeholder="Nome da música">
+                </div>
+                <div class="col-md-5">
+                    <input type="text" id="artistName" class="form-control bg-dark text-white border-secondary" placeholder="Artista">
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-spotify w-100" onclick="addMusic()">
+                        <i class="fa-solid fa-plus"></i> Add
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="musicList">
+            <!-- Músicas serão inseridas aqui -->
+        </div>
+    </div>
+
+    <script>
+        let musicas = JSON.parse(localStorage.getItem('minhas_musicas')) || [
+            { nome: 'Blinding Lights', artista: 'The Weeknd' },
+            { nome: 'Levitating', artista: 'Dua Lipa' },
+            { nome: 'Starboy', artista: 'The Weeknd' }
+        ];
+
+        function renderMusicas() {
+            const list = document.getElementById('musicList');
+            list.innerHTML = '';
+            
+            musicas.forEach((musica, index) => {
+                list.innerHTML += `
+                    <div class="music-card shadow">
+                        <div class="music-info">
+                            <div class="music-icon">
+                                <i class="fa-solid fa-music"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0">${musica.nome}</h5>
+                                <small class="text-muted">${musica.artista}</small>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-trash delete-btn" onclick="removeMusic(${index})"></i>
+                    </div>
+                `;
+            });
+        }
+
+        function addMusic() {
+            const nome = document.getElementById('musicName').value;
+            const artista = document.getElementById('artistName').value;
+            
+            if(nome && artista) {
+                musicas.push({ nome, artista });
+                localStorage.setItem('minhas_musicas', JSON.stringify(musicas));
+                document.getElementById('musicName').value = '';
+                document.getElementById('artistName').value = '';
+                renderMusicas();
+            } else {
+                alert('Preencha o nome e o artista!');
+            }
+        }
+
+        function removeMusic(index) {
+            musicas.splice(index, 1);
+            localStorage.setItem('minhas_musicas', JSON.stringify(musicas));
+            renderMusicas();
+        }
+
+        renderMusicas();
+    </script>
+</body>
+</html>

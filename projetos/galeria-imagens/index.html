@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Galeria de Imagens</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Galeria de Imagens</h2>
+
+        <!-- Galeria -->
+        <div class="galeria">
+
+        <img src="imagens/img1.jpeg" onclick="abrirModal(this)">
+        <img src="imagens/img2.jpeg" onclick="abrirModal(this)">
+        <img src="imagens/img3.jpeg" onclick="abrirModal(this)">
+        <img src="imagens/img4.jpeg" onclick="abrirModal(this)">
+        <img src="imagens/img5.jpeg" onclick="abrirModal(this)">
+        <img src="imagens/img6.jpeg" onclick="abrirModal(this)">
+
+        </div>
+
+        <a href="../../index.html" class="voltar">← Voltar ao portfólio</a>
+
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+
+        <span id="fechar" onclick="fecharModal()">&times;</span>
+
+        <img id="imagemModal">
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

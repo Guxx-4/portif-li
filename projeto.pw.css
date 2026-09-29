@@ -1,0 +1,904 @@
+/* =====================================================
+   CONFIGURAÇÕES GERAIS
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    margin: 0;
+
+    padding-top: 76px;
+
+    font-family: Arial, sans-serif;
+
+    background-color: var(--cor-fundo);
+
+    color: var(--cor-texto);
+
+    transition: background-color 0.4s, color 0.4s;
+
+}
+
+
+
+/* =====================================================
+   VARIÁVEIS DO TEMA CLARO
+   (toda a paleta gira em torno do mesmo azul,
+   só muda a luminosidade no tema escuro)
+===================================================== */
+
+:root {
+
+    --cor-principal: #1565c0;
+
+    --cor-secundaria: #1976d2;
+
+    --cor-clara: #e3f2fd;
+
+    --cor-fundo: #ffffff;
+
+    --cor-texto: #172033;
+
+    --cor-card: #ffffff;
+
+    --cor-borda: #bbdefb;
+
+    --cor-destaque: #64b5f6;
+
+}
+
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+
+    background-color: var(--cor-principal);
+
+    transition: background-color 0.4s;
+
+}
+
+.navbar-brand {
+
+    font-size: 24px;
+
+}
+
+.navbar-toggler {
+
+    border-color: rgba(255,255,255,0.4);
+
+}
+
+.tema-btn {
+
+    width: 46px;
+
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+
+/* =====================================================
+   MENU LATERAL
+===================================================== */
+
+.offcanvas {
+
+    background-color: var(--cor-card);
+
+    color: var(--cor-texto);
+
+}
+
+.offcanvas-title {
+
+    color: var(--cor-texto);
+
+}
+
+.offcanvas .nav-link {
+
+    color: var(--cor-texto);
+
+    font-size: 18px;
+
+    padding: 12px;
+
+}
+
+.offcanvas .nav-link:hover {
+
+    color: var(--cor-principal);
+
+}
+
+
+
+/* =====================================================
+   HERO / INÍCIO
+===================================================== */
+
+.hero {
+
+    min-height: calc(100vh - 76px);
+
+    display: flex;
+
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        var(--cor-principal),
+        var(--cor-secundaria)
+    );
+
+    color: white;
+
+    padding: 80px 0;
+
+}
+
+.hero h1 {
+
+    font-size: 64px;
+
+    font-weight: 800;
+
+    margin-top: 25px;
+
+}
+
+.hero p {
+
+    font-size: 21px;
+
+    line-height: 1.6;
+
+    max-width: 700px;
+
+}
+
+.hero .badge {
+
+    background-color: rgba(0,0,0,0.25);
+
+    color: #ffffff;
+
+    padding: 8px 12px;
+
+    border-radius: 7px;
+
+    letter-spacing: 0.5px;
+
+}
+
+
+
+/* =====================================================
+   FOTO DO INÍCIO
+===================================================== */
+
+.foto-inicio {
+
+    width: 380px;
+
+    height: 380px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 7px solid white;
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+
+    transition: transform 0.3s;
+
+}
+
+.foto-inicio:hover {
+
+    transform: scale(1.03);
+
+}
+
+
+
+/* =====================================================
+   FOTO SOBRE
+===================================================== */
+
+.foto-sobre {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    height: 450px;
+
+    object-fit: cover;
+
+    border-radius: 25px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+
+}
+
+
+
+/* =====================================================
+   SEÇÕES
+===================================================== */
+
+section {
+
+    transition: background-color 0.4s, color 0.4s;
+
+}
+
+
+
+/* =====================================================
+   SEÇÃO ALTERNATIVA
+===================================================== */
+
+.secao-destaque {
+
+    background-color: var(--cor-clara);
+
+}
+
+
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.card {
+
+    background-color: var(--cor-card);
+
+    color: var(--cor-texto);
+
+    border: 1px solid var(--cor-borda);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+
+    transition: transform 0.3s, background-color 0.4s;
+
+}
+
+.card:hover {
+
+    transform: translateY(-5px);
+
+}
+
+.card h4 {
+
+    margin-top: 10px;
+
+}
+
+
+
+/* =====================================================
+   ÍCONES DOS CARDS
+===================================================== */
+
+.icone-card {
+
+    font-size: 55px;
+
+    color: var(--cor-principal);
+
+    margin-bottom: 20px;
+
+}
+
+
+
+/* =====================================================
+   IMAGENS DOS PROJETOS
+===================================================== */
+
+.imagem-projeto {
+
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+
+}
+
+
+
+/* =====================================================
+   CABEÇALHO COM ÍCONE (projetos sem foto)
+===================================================== */
+
+.projeto-icone {
+
+    width: 100%;
+
+    height: 220px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background-color: var(--cor-clara);
+
+    font-size: 70px;
+
+    color: var(--cor-principal);
+
+    transition: background-color 0.4s, color 0.4s;
+
+}
+
+
+
+/* =====================================================
+   LISTA DE HABILIDADES
+===================================================== */
+
+.list-group-item {
+
+    background-color: var(--cor-card);
+
+    color: var(--cor-texto);
+
+    border-color: var(--cor-borda);
+
+    padding: 14px;
+
+}
+
+.list-group-item i {
+
+    color: var(--cor-principal);
+
+    margin-right: 8px;
+
+}
+
+
+
+/* =====================================================
+   DIFERENCIAIS
+===================================================== */
+
+.icone-diferencial {
+
+    font-size: 35px;
+
+    color: var(--cor-principal);
+
+    margin-right: 18px;
+
+}
+
+
+
+/* =====================================================
+   ACCORDION
+===================================================== */
+
+.accordion-item {
+
+    background-color: var(--cor-card);
+
+    color: var(--cor-texto);
+
+    border-color: var(--cor-borda);
+
+}
+
+.accordion-button {
+
+    background-color: var(--cor-card);
+
+    color: var(--cor-texto);
+
+}
+
+.accordion-button:not(.collapsed) {
+
+    background-color: var(--cor-clara);
+
+    color: var(--cor-principal);
+
+}
+
+
+
+/* =====================================================
+   CONTATO
+===================================================== */
+
+.contato {
+
+    background-color: var(--cor-fundo);
+
+}
+
+
+
+/* =====================================================
+   INSTAGRAM
+   (mantém a cor de marca do Instagram de propósito,
+   é a identidade visual da própria rede social)
+===================================================== */
+
+.btn-instagram {
+
+    background: linear-gradient(
+        45deg,
+        #f09433,
+        #e6683c,
+        #dc2743,
+        #cc2366,
+        #bc1888
+    );
+
+    color: white;
+
+    border: none;
+
+}
+
+.btn-instagram:hover {
+
+    color: white;
+
+    opacity: 0.9;
+
+}
+
+
+
+/* =====================================================
+   RODAPÉ
+   (fundo escuro fixo funciona como "âncora" visual
+   nos dois temas, só o link de hover usa a cor principal)
+===================================================== */
+
+footer {
+
+    background-color: #0b0e14;
+
+    color: white;
+
+    padding-top: 50px;
+
+}
+
+footer a {
+
+    color: white;
+
+    text-decoration: none;
+
+}
+
+footer a:hover {
+
+    color: var(--cor-destaque);
+
+}
+
+.rede-social {
+
+    font-size: 30px;
+
+    margin-right: 15px;
+
+}
+
+
+
+/* =====================================================
+   BOTÃO VOLTAR AO TOPO
+===================================================== */
+
+#btnTopo {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    width: 50px;
+
+    height: 50px;
+
+    display: none;
+
+    z-index: 1000;
+
+    background-color: var(--cor-principal);
+
+    border-color: var(--cor-principal);
+
+}
+
+#btnTopo:hover {
+
+    background-color: var(--cor-secundaria);
+
+    border-color: var(--cor-secundaria);
+
+}
+
+
+
+/* =====================================================
+   LOADER
+===================================================== */
+
+#loader {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background-color: var(--cor-fundo);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 9999;
+
+    transition: opacity 0.5s, background-color 0.4s;
+
+}
+
+#loader.esconder {
+
+    opacity: 0;
+
+    pointer-events: none;
+
+}
+
+
+
+/* =====================================================
+   =====================================================
+   TEMA ESCURO
+   Mesma família de azul do tema claro, só muda o
+   brilho/contraste para funcionar num fundo escuro
+   =====================================================
+===================================================== */
+
+body.dark-mode {
+
+    --cor-principal: #4dabf7;
+
+    --cor-secundaria: #2196f3;
+
+    --cor-clara: #101a2b;
+
+    --cor-fundo: #0a0e14;
+
+    --cor-texto: #e8eef7;
+
+    --cor-card: #111827;
+
+    --cor-borda: #22344d;
+
+    --cor-destaque: #64b5f6;
+
+    background-color: #0a0e14;
+
+    color: #e8eef7;
+
+}
+
+
+
+/* =====================================================
+   NAVBAR ESCURA
+===================================================== */
+
+body.dark-mode .navbar {
+
+    background-color: #0a0e14;
+
+    border-bottom: 1px solid var(--cor-borda);
+
+}
+
+
+
+/* =====================================================
+   MENU ESCURO
+===================================================== */
+
+body.dark-mode .offcanvas {
+
+    background-color: var(--cor-card);
+
+    color: var(--cor-texto);
+
+}
+
+body.dark-mode .offcanvas-title {
+
+    color: var(--cor-texto);
+
+}
+
+body.dark-mode .offcanvas .nav-link {
+
+    color: var(--cor-texto);
+
+}
+
+body.dark-mode .offcanvas .nav-link:hover {
+
+    color: var(--cor-principal);
+
+}
+
+
+
+/* =====================================================
+   HERO ESCURO
+===================================================== */
+
+body.dark-mode .hero {
+
+    background: linear-gradient(
+        135deg,
+        #050810,
+        #0d1a2e,
+        #123054
+    );
+
+}
+
+body.dark-mode .hero .badge {
+
+    background-color: rgba(255,255,255,0.12);
+
+    color: #ffffff;
+
+}
+
+
+
+/* =====================================================
+   BOTÃO DE TEMA
+===================================================== */
+
+body.dark-mode .tema-btn {
+
+    background-color: var(--cor-principal);
+
+    border-color: var(--cor-principal);
+
+    color: #0a0e14;
+
+}
+
+
+
+/* =====================================================
+   SEÇÕES ESCURAS
+===================================================== */
+
+body.dark-mode .secao-destaque {
+
+    background-color: var(--cor-clara);
+
+}
+
+body.dark-mode .contato {
+
+    background-color: var(--cor-fundo);
+
+}
+
+
+
+/* =====================================================
+   CARDS ESCUROS
+===================================================== */
+
+body.dark-mode .card {
+
+    background-color: var(--cor-card);
+
+    color: var(--cor-texto);
+
+    border-color: var(--cor-borda);
+
+}
+
+body.dark-mode .card p {
+
+    color: #c7d3e6;
+
+}
+
+
+
+/* =====================================================
+   LISTA ESCURA
+===================================================== */
+
+body.dark-mode .list-group-item {
+
+    background-color: var(--cor-card);
+
+    color: var(--cor-texto);
+
+    border-color: var(--cor-borda);
+
+}
+
+body.dark-mode .list-group-item i {
+
+    color: var(--cor-principal);
+
+}
+
+
+
+/* =====================================================
+   ACCORDION ESCURO
+===================================================== */
+
+body.dark-mode .accordion-item {
+
+    background-color: var(--cor-card);
+
+    color: var(--cor-texto);
+
+    border-color: var(--cor-borda);
+
+}
+
+body.dark-mode .accordion-button {
+
+    background-color: var(--cor-card);
+
+    color: var(--cor-texto);
+
+}
+
+body.dark-mode .accordion-button:not(.collapsed) {
+
+    background-color: var(--cor-clara);
+
+    color: var(--cor-principal);
+
+}
+
+
+
+/* =====================================================
+   TEXT-MUTED NO ESCURO
+===================================================== */
+
+body.dark-mode .text-muted {
+
+    color: #a9b7cc !important;
+
+}
+
+
+
+/* =====================================================
+   ÍCONES NO ESCURO
+===================================================== */
+
+body.dark-mode .icone-card,
+
+body.dark-mode .icone-diferencial {
+
+    color: var(--cor-principal);
+
+}
+
+
+
+/* =====================================================
+   RESPONSIVIDADE
+===================================================== */
+
+@media (max-width: 991px) {
+
+    .hero {
+
+        text-align: center;
+
+    }
+
+    .hero h1 {
+
+        font-size: 48px;
+
+    }
+
+    .hero p {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+    .foto-inicio {
+
+        width: 300px;
+
+        height: 300px;
+
+        margin-top: 50px;
+
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .hero h1 {
+
+        font-size: 40px;
+
+    }
+
+    .hero p {
+
+        font-size: 18px;
+
+    }
+
+    .foto-inicio {
+
+        width: 250px;
+
+        height: 250px;
+
+    }
+
+}

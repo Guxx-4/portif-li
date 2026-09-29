@@ -1,0 +1,60 @@
+/* Remove margens padrão */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Centraliza o relógio na tela */
+body{
+    background:#f2f2f2;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+/* Caixa principal */
+.container{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+    text-align:center;
+}
+
+/* Título */
+h2{
+    margin-bottom:20px;
+}
+
+/* Relógio */
+#relogio{
+    background:#007BFF;
+    color:white;
+    padding:20px;
+    border-radius:10px;
+    font-size:40px;
+    font-weight:bold;
+    letter-spacing:3px;
+}
+
+.voltar{
+    display:block;
+    margin-top:20px;
+    color:#007BFF;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.voltar:hover{
+    text-decoration:underline;
+}
+
+/* Responsividade */
+@media(max-width:600px){
+    #relogio{
+        font-size:28px;
+    }
+}
